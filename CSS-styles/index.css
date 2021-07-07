@@ -1,0 +1,240 @@
+/*----------------------------------
+  CSS stylesheet:
+  Base Apparel Coming Soon Page
+  ----------------------------------*/
+
+/* ---------------------------
+       RESET DEFAULT STYLES 
+  ------------------------------- */
+
+/* set core root default */
+html {
+  scroll-behavior: smooth;
+}
+
+/* set defualt behaviour for all block elementt */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Box sizing rules */
+  /* Remove default padding and Margin  */
+  margin: 0;
+  padding: 0;
+}
+
+/* set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* make images eaier to work with*/
+img {
+  max-width: 100%;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+/* Variables */
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+  /* background colors */
+  --background-1: linear-gradient(
+    to right,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+  --background-2: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+/* ------------------
+      Page Layout
+---------------------*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  align-self: flex-start;
+  margin: 2rem;
+}
+
+.logo {
+  width: 100px;
+}
+
+.hero {
+  width: 100%;
+  height: 250px;
+}
+
+.hero-bg {
+  background: url(/images/hero-mobile.jpg) no-repeat;
+  background-size: 100% 100%;
+  width: inherit;
+  height: inherit;
+}
+
+.card {
+  margin-top: 2rem;
+  font-size: 1rem;
+  padding: 2rem;
+  color: var(--Desaturated-Red);
+}
+
+.intro .intro-heading {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--Dark-Grayish-Red);
+  letter-spacing: 10px;
+}
+
+.intro-heading .head-r {
+  font-weight: 100;
+  color: var(--Desaturated-Red);
+}
+
+.email-sec {
+  margin: 2rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border: 1px solid var(--Desaturated-Red);
+  border-radius: 30px;
+  padding-left: 1rem;
+}
+
+form .input {
+  flex-grow: 1;
+  height: 40px;
+  color: var(--Desaturated-Red);
+  outline: none;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+form:invalid {
+  border: 2px solid var(--Soft-Red);
+}
+
+input::placeholder {
+  color: var(--Desaturated-Red);
+  font-family: inherit;
+}
+
+form .submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 85px;
+  background: var(--background-2);
+  box-shadow: 0 15px 20px 0px rgb(252, 217, 217);
+  outline: none;
+  border: none;
+  border-radius: 30px;
+}
+
+form .submit:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.submit:active {
+  transform: scale(1.1);
+}
+
+form .error {
+  display: block;
+  margin-right: 0.5rem;
+  display: none;
+}
+
+.err-mssg {
+  text-align: left;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  color: var(--Soft-Red);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 50em) {
+  body {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .main {
+    display: grid;
+    grid-template-areas:
+      "header hero"
+      "card   hero";
+    grid-template-columns: 1fr 1fr;
+    background: var(--background-1);
+    padding-left: 4rem;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  header {
+    grid-area: header;
+  }
+  .hero {
+    grid-area: hero;
+  }
+  .card {
+    grid-area: card;
+  }
+
+  .hero {
+    height: 100%;
+  }
+
+  .hero-bg {
+    background: url(/images/hero-desktop.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: inherit;
+    height: inherit;
+  }
+  .email-sec {
+    margin-left: 0;
+  }
+  .card {
+    max-width: 500px;
+  }
+}
