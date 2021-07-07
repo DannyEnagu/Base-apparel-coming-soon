@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-<!-- - Solution URL: [See The Source Code to The solution here](https://github.com/DannyEnagu/huddle-landing-page-solution)
-- Live Site URL: [live site URL here](https://agitated-kowalevski-2bd21c.netlify.app/) -->
+- Solution URL: [See The Source Code to The solution here](https://github.com/DannyEnagu/base-apparel-coming-soon)
+- Live Site URL: [live site URL here](https://fervent-raman-2a3ef6.netlify.app/) 
 
 # My process
 
